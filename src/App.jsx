@@ -1,12 +1,18 @@
 import jumbotron from "./assets/jumbotron.png";
 import jumbotron2 from "./assets/jumbotron2.png";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import {
+  faAngleRight,
+  faCartShopping,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 export default function App() {
   return (
     <div className="contaner w-full">
-      <div className="container-navbar container flex flex-row m-auto w-screen p-10 border-b-2">
+      <div className="container-navbar container flex flex-row m-auto w-screen pt-7 pb-3 border-b-2 items-center">
         <div className="brand container">
-          <h1 className="">Exclusive </h1>
+          <h1 className="text-xl font-bold">Exclusive </h1>
         </div>
 
         <div className="navbar container flex justify-center gap-10 ">
@@ -18,18 +24,29 @@ export default function App() {
           <a href="">Sign Up</a>
         </div>
 
-        <div className="container flex justify-end gap-10">
-          <button>Search</button>
-          <button>Love</button>
-          <button>Cart</button>
+        <div className="container flex justify-end gap-5 items-center">
+          <div className="searh flex flex-row items-center gap-3 bg-slate-200 py-2 px-3 rounded-md">
+            <p>what are you looking for?</p>
+            <FontAwesomeIcon icon={faSearch} className="text-lg" />
+          </div>
+
+          <FontAwesomeIcon icon={faHeart} className="text-xl" />
+          <FontAwesomeIcon icon={faCartShopping} className="text-xl" />
         </div>
       </div>
 
       {/*  */}
       <div className="container-jumbotron container m-auto flex flex-row">
         <div className="navside container flex flex-col gap-3 border-r-2 w-1/4 pt-7">
-          <a href="">Women Fashion</a>
-          <a href="">Men Fashion</a>
+          <div className="nav flex flex-row items-center justify-between pr-7">
+            <a href="">Women Fashion</a>
+            <FontAwesomeIcon icon={faAngleRight} className="text-xl" />
+          </div>
+
+          <div className="nav flex flex-row items-center justify-between pr-7">
+            <a href="">Men Fashion</a>
+            <FontAwesomeIcon icon={faAngleRight} className="text-xl" />
+          </div>
           <a href="">Electronics</a>
           <a href="">Home & Lifestyle</a>
           <a href="">Medicines</a>
@@ -38,20 +55,21 @@ export default function App() {
           <a href="">Grocire & Pet</a>
           <a href="">Health & Beauty</a>
         </div>
-        <div className="jumbotron container pt-7 pl-7">
+        <div className="jumbotron container pt-10 pl-10">
           <img src={jumbotron} alt="" />
         </div>
       </div>
 
       {/*  */}
-      <div className="container-view container flex flex-col mx-auto py-20 gap-10 border-b-2">
-        <div className="title container pl-5 border-l-8">
-          <h2>Today's</h2>
+      <div className="container-view container flex flex-col mx-auto py-20 gap-7 border-b-2">
+        <div className="title container flex flex-row gap-3">
+          <div className="bg-[#DB4444] w-4 rounded-sm"></div>
+          <h2 className="text-[#DB4444] text-lg font-semibold">Today's</h2>
         </div>
         <div className="flash-sale container">
           <div className="container flex flex-row">
             <div className="container">
-              <h2>Flash Sales</h2>
+              <h2 className="text-3xl font-bold">Flash Sales</h2>
             </div>
             <div className="container">
               <h2>Duration time</h2>
