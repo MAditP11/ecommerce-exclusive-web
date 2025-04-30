@@ -4,15 +4,15 @@ import newArrival from "./assets/newArrival1.png";
 import newArrival2 from "./assets/newArrival2.png";
 import newArrival3 from "./assets/newArrival3.png";
 import newArrival4 from "./assets/newArrival4.png";
+import Header from "./components/header";
 import ContainerCategory from "./components/container_category";
 import ContainerProduct from "./components/container_product";
+import Button from "./components/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock, faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faClock } from "@fortawesome/free-regular-svg-icons";
 import {
   faAngleRight,
   faAngleDown,
-  faCartShopping,
-  faSearch,
   faArrowRight,
   faArrowLeft,
   faMobileAndroid,
@@ -24,6 +24,7 @@ import {
   faHeadset,
   faCheckToSlot,
 } from "@fortawesome/free-solid-svg-icons";
+import ContainerAdvantage from "./components/container_advantage";
 export default function App() {
   return (
     <div className="contaner">
@@ -51,52 +52,7 @@ export default function App() {
       </div>
 
       {/*  */}
-      <div className="container-navbar container flex flex-row m-auto w-screen pt-7 pb-3 border-b-2 items-center">
-        <div className="brand container">
-          <h1 className="text-2xl font-bold">Exclusive </h1>
-        </div>
-
-        <div className="navbar container flex justify-center gap-10 items-center ">
-          <div className="hover:border-b-2 px-1 ">
-            <a className="text-base" href="">
-              Home
-            </a>
-          </div>
-          <div className="hover:border-b-2 px-1 ">
-            <a className="text-base" href="">
-              Contract
-            </a>
-          </div>
-          <div className="hover:border-b-2 px-1 ">
-            <a className="text-base" href="">
-              About
-            </a>
-          </div>
-          <div className="hover:border-b-2 px-1 ">
-            <a className="text-base" href="">
-              Sign Up
-            </a>
-          </div>
-        </div>
-
-        <div className="container flex justify-end gap-5 items-center">
-          <div className="searh flex flex-row items-center gap-3 bg-slate-200 py-2 px-3 rounded-md">
-            <input
-              className="text-xs bg-slate-200 text-black focus:outline-none"
-              type="text"
-              id="search"
-              placeholder="what are you looking for?"
-            />
-            <FontAwesomeIcon icon={faSearch} className="text-lg" />
-          </div>
-          <a href="">
-            <FontAwesomeIcon icon={faHeart} className="text-xl" />
-          </a>
-          <a href="">
-            <FontAwesomeIcon icon={faCartShopping} className="text-xl" />
-          </a>
-        </div>
-      </div>
+      <Header />
 
       {/*  */}
       <div className="container-jumbotron container m-auto flex flex-row">
@@ -192,11 +148,10 @@ export default function App() {
             <ContainerProduct />
           </div>
         </div>
-        <div className="button-view container flex justify-center">
-          <button className="px-8 py-3 text-base font-medium text-white rounded-md bg-[#DB4444]">
-            View All Products
-          </button>
-        </div>
+        <Button
+          Class={"button-view container flex justify-center"}
+          title={"View All Products"}
+        />
       </div>
 
       {/*  */}
@@ -245,11 +200,7 @@ export default function App() {
             <div className="container">
               <h2 className="text-4xl font-semibold">Best Selling Product</h2>
             </div>
-            <div className="container flex justify-end">
-              <button className="px-8 py-3 text-base font-medium text-white rounded-md bg-[#DB4444]">
-                View All
-              </button>
-            </div>
+            <Button Class={"container flex justify-end"} title={"View All"} />
           </div>
         </div>
         <div className="list-categories container">
@@ -303,11 +254,11 @@ export default function App() {
             <ContainerProduct />
           </div>
         </div>
-        <div className="button-view container flex justify-center">
-          <button className="px-8 py-3 text-base font-medium text-white rounded-md bg-[#DB4444]">
-            View All Products
-          </button>
-        </div>
+
+        <Button
+          Class={"button-view container flex justify-center"}
+          title={"View All Products"}
+        />
       </div>
 
       {/*  */}
@@ -353,86 +304,24 @@ export default function App() {
 
       {/*  */}
       <div className="advantage container flex flex-row mx-auto py-20">
-        <div className="container flex flex-col items-center gap-4">
-          <div className="container  w-16 h-16 p-1 rounded-full flex justify-center items-center">
-            <div className="bg-black p-3 rounded-full border-8 border-slate-400">
-              <FontAwesomeIcon
-                className="text-white text-2xl"
-                icon={faTruckFast}
-              />
-            </div>
-          </div>
-          <div className="flex flex-col items-center">
-            <h2 className="text-xl font-semibold">FREE AND FAST DELIVERY</h2>
-            <h5 className="text-sm font-normal">
-              Free delivery for all orders over $140
-            </h5>
-          </div>
-        </div>
-
-        <div className="container flex flex-col items-center gap-4">
-          <div className="container  w-16 h-16 p-1 rounded-full flex justify-center items-center">
-            <div className="bg-black p-3 rounded-full border-8 border-slate-400">
-              <FontAwesomeIcon
-                className="text-white text-2xl"
-                icon={faHeadset}
-              />
-            </div>
-          </div>
-          <div className="flex flex-col items-center">
-            <h2 className="text-xl font-semibold">24/7 CUSTOMER SERVICE</h2>
-            <h5 className="text-sm font-normal">
-              Friendly 24/7 customer support
-            </h5>
-          </div>
-        </div>
-
-        <div className="container flex flex-col items-center gap-4">
-          <div className="container  w-16 h-16 p-1 rounded-full flex justify-center items-center">
-            <div className="bg-black p-3 rounded-full border-8 border-slate-400">
-              <FontAwesomeIcon
-                className="text-white text-2xl"
-                icon={faCheckToSlot}
-              />
-            </div>
-          </div>
-          <div className="flex flex-col items-center">
-            <h2 className="text-xl font-semibold">MONEY BACK GUARANTEE</h2>
-            <h5 className="text-sm font-normal">
-              We reurn money within 30 days
-            </h5>
-          </div>
-        </div>
+        <ContainerAdvantage
+          icon={faTruckFast}
+          title={"FREE AND FAST DELIVERY"}
+          p={"Free delivery for all orders over $140"}
+        />
+        <ContainerAdvantage
+          icon={faHeadset}
+          title={"24/7 CUSTOMER SERVICE"}
+          p={"Friendly 24/7 customer support"}
+        />
+        <ContainerAdvantage
+          icon={faCheckToSlot}
+          title={"MONEY BACK GUARANTEE"}
+          p={"We return money within 30 days"}
+        />
       </div>
 
       {/*  */}
-      {/* <div className="footer mx-auto bg-gray-500 pt-10 pb-5 w-screen right-0 left-0">
-        <div className="container flex flex-col gap-10 items-center m-auto">
-          <div className="container flex flex-row gap-5">
-            <div className="container flex flex-col gap-3">
-              <h2>Exclusive</h2>
-              <h3>Subcribe</h3>
-            </div>
-            <div className="container flex flex-col gap-3">
-              <h2>Exclusive</h2>
-              <h3>Subcribe</h3>
-            </div>
-            <div className="container flex flex-col gap-3">
-              <h2>Exclusive</h2>
-              <h3>Subcribe</h3>
-            </div>
-            <div className="container flex flex-col gap-3">
-              <h2>Exclusive</h2>
-              <h3>Subcribe</h3>
-            </div>
-            <div className="container flex flex-col gap-3">
-              <h2>Exclusive</h2>
-              <h3>Subcribe</h3>
-            </div>
-          </div>
-          <h5>Copyright</h5>
-        </div>
-      </div> */}
     </div>
   );
 }
