@@ -1,4 +1,4 @@
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faHeart, faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import { faSearch, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Header({ hidden }) {
@@ -41,12 +41,15 @@ export default function Header({ hidden }) {
           />
           <FontAwesomeIcon icon={faSearch} className="text-lg" />
         </div>
-        <div className={`flex gap-5 ${hidden}`}>
+        <div className={`flex gap-5 items-center ${hidden}`}>
           <a href="">
             <FontAwesomeIcon icon={faHeart} className="text-xl" />
           </a>
           <a href="">
             <FontAwesomeIcon icon={faCartShopping} className="text-xl" />
+          </a>
+          <a href="">
+            <FontAwesomeIcon icon={faUserCircle} className="text-xl" />
           </a>
         </div>
       </div>
