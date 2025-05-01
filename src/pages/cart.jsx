@@ -4,7 +4,6 @@ import { useState, useRef } from "react";
 
 import product from "../assets/product.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 export default function Cart() {
   const [value, setValue] = useState("1");

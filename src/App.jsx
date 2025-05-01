@@ -5,6 +5,7 @@ import SignUp from "./pages/signup";
 import Login from "./pages/login";
 import Whislist from "./pages/whislist";
 import Cart from "./pages/cart";
+import Checkout from "./pages/checkout";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/whislist" element={<Whislist />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </Router>
   );
