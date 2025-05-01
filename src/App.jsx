@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import SignUp from "./pages/signup";
 import Login from "./pages/login";
 import Whislist from "./pages/whislist";
+import Cart from "./pages/cart";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/whislist" element={<Whislist />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
   );
