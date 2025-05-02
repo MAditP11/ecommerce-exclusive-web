@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Cart() {
   const [value, setValue] = useState("1");
-  const [price, setPrice] = useState(550);
+  const [price] = useState(550);
   const inputRef = useRef(null);
 
   const handleFocus = () => {

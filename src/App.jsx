@@ -6,6 +6,7 @@ import Login from "./pages/login";
 import Whislist from "./pages/whislist";
 import Cart from "./pages/cart";
 import Checkout from "./pages/checkout";
+import Account from "./pages/account";
 
 export default function App() {
   return (
@@ -17,6 +18,8 @@ export default function App() {
         <Route path="/whislist" element={<Whislist />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+
+        <Route path="/account" element={<Account />} />
       </Routes>
     </Router>
   );

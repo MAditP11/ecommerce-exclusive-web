@@ -1,40 +1,14 @@
 import Advise from "../components/advise";
 import Header from "../components/header";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 import product from "../assets/product.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FormCheckout from "../components/formCheckout";
 
 export default function Checkout() {
-  const [value, setValue] = useState("1");
-  const [price, setPrice] = useState(550);
-  const inputRef = useRef(null);
-
-  const handleFocus = () => {
-    if (inputRef.current) {
-      inputRef.current.select();
-    }
-  };
-
-  const changeValue = (e) => {
-    const newValue = e.target.value;
-
-    if (newValue.length < 3) {
-      if (value === "" || Number(newValue) === 0 || Number(value) < 0) {
-        setValue(1);
-      } else {
-        setValue(newValue);
-      }
-    }
-    console.log(value);
-  };
-
-  const blurValue = () => {
-    if (value === "" || Number(value) === 0 || Number(value) < 0) {
-      setValue(1);
-    }
-  };
+  const [value] = useState("1");
+  const [price] = useState(550);
 
   return (
     <div className="">
