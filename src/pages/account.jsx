@@ -1,40 +1,7 @@
 import Advise from "../components/advise";
 import Header from "../components/header";
-import { useState, useRef } from "react";
-
 import FormAccount from "../components/formAccount";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 export default function Account() {
-  const [value, setValue] = useState("1");
-  const [price] = useState(550);
-  const inputRef = useRef(null);
-
-  const handleFocus = () => {
-    if (inputRef.current) {
-      inputRef.current.select();
-    }
-  };
-
-  const changeValue = (e) => {
-    const newValue = e.target.value;
-
-    if (newValue.length < 3) {
-      if (value === "" || Number(newValue) === 0 || Number(value) < 0) {
-        setValue(1);
-      } else {
-        setValue(newValue);
-      }
-    }
-    console.log(value);
-  };
-
-  const blurValue = () => {
-    if (value === "" || Number(value) === 0 || Number(value) < 0) {
-      setValue(1);
-    }
-  };
-
   return (
     <div className="">
       {/*  */}
@@ -91,7 +58,7 @@ export default function Account() {
             </div>
           </div>
 
-          <div className="container flex flex-col px-14 py-7 gap-7 shadow-md rounded-sm">
+          <div className="container w-16 h-16 flex flex-col px-14 py-7 gap-7 shadow-md rounded-sm">
             {/*  */}
 
             <h2 className="text-xl font-medium text-[#DB4444]">My Account</h2>
