@@ -26,7 +26,6 @@ export default function Cart() {
         setValue(newValue);
       }
     }
-    console.log(value);
   };
 
   const blurValue = () => {

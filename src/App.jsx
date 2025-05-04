@@ -9,6 +9,8 @@ import Checkout from "./pages/checkout";
 import Account from "./pages/account";
 import About from "./pages/about";
 import Contact from "./pages/contact";
+import NotFound from "./pages/notfound";
+import DetailProduct from "./pages/detailproduct";
 
 export default function App() {
   return (
@@ -23,6 +25,8 @@ export default function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/not-found" element={<NotFound />} />
+        <Route path="/detail-product" element={<DetailProduct />} />
       </Routes>
     </Router>
   );
