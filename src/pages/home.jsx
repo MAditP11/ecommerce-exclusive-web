@@ -32,7 +32,7 @@ export default function Home() {
       <Advise />
 
       {/*  */}
-      <Header />
+      <Header hiddenUser={true} activeHome={true} />
 
       {/*  */}
       <div className="container-jumbotron container m-auto flex flex-row">

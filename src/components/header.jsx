@@ -1,34 +1,30 @@
 import { faHeart, faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import { faSearch, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-export default function Header({ hidden }) {
+import NavHeader from "./navHeader";
+import { useState } from "react";
+export default function Header({
+  hiddenIcon,
+  hiddenUser,
+  activeHome,
+  activeContact,
+  activeAbout,
+  activeSignUp,
+}) {
+  const [count, setCount] = useState(0);
   return (
     <div className="container-navbar container flex flex-row m-auto w-screen pt-7 pb-3 border-b-2 items-center">
       <div className="brand container">
-        <h1 className="text-2xl font-bold">Exclusive </h1>
+        <a className="text-2xl font-bold" href="/">
+          Exclusive{" "}
+        </a>
       </div>
 
       <div className="navbar container flex justify-center gap-10 items-center ">
-        <div className="hover:border-b-2 px-1 ">
-          <a className="text-base" href="">
-            Home
-          </a>
-        </div>
-        <div className="hover:border-b-2 px-1 ">
-          <a className="text-base" href="">
-            Contract
-          </a>
-        </div>
-        <div className="hover:border-b-2 px-1 ">
-          <a className="text-base" href="">
-            About
-          </a>
-        </div>
-        <div className="hover:border-b-2 px-1 ">
-          <a className="text-base" href="">
-            Sign Up
-          </a>
-        </div>
+        <NavHeader name={"Home"} active={activeHome} href={"/"} />
+        <NavHeader name={"Contact"} active={activeContact} href={"/contact"} />
+        <NavHeader name={"About"} active={activeAbout} href={"/about"} />
+        <NavHeader name={"Sign Up"} active={activeSignUp} href={"/signup"} />
       </div>
 
       <div className="container flex justify-end gap-5 items-center">
@@ -41,14 +37,24 @@ export default function Header({ hidden }) {
           />
           <FontAwesomeIcon icon={faSearch} className="text-lg" />
         </div>
-        <div className={`flex gap-5 items-center ${hidden}`}>
-          <a href="">
-            <FontAwesomeIcon icon={faHeart} className="text-xl" />
-          </a>
-          <a href="">
+        <div
+          className={`flex gap-5 items-center ${
+            hiddenIcon === true ? "hidden" : ""
+          }`}
+        >
+          <div className="bg-slate-400 py-1">
+            <a href="/whislist">
+              <FontAwesomeIcon icon={faHeart} className="text-xl" />
+            </a>
+            <p>{count}</p>
+          </div>
+          <a href="/cart">
             <FontAwesomeIcon icon={faCartShopping} className="text-xl" />
           </a>
-          <a href="">
+          <a
+            className={`${hiddenUser === true ? "hidden" : ""}`}
+            href="/account"
+          >
             <FontAwesomeIcon icon={faUserCircle} className="text-xl" />
           </a>
         </div>

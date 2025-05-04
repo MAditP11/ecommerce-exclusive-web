@@ -58,7 +58,7 @@ export default function Account() {
             </div>
           </div>
 
-          <div className="container w-16 h-16 flex flex-col px-14 py-7 gap-7 shadow-md rounded-sm">
+          <div className="container flex flex-col px-14 py-7 gap-7 shadow-md rounded-sm">
             {/*  */}
 
             <h2 className="text-xl font-medium text-[#DB4444]">My Account</h2>
