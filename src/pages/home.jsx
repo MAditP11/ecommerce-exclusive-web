@@ -22,26 +22,49 @@ import {
   faTruckFast,
   faHeadset,
   faCheckToSlot,
+  faAngleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import ContainerAdvantage from "../components/container_advantage";
 import Advise from "../components/advise";
+import { useState } from "react";
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openNav = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div className="">
       {/*  */}
       <Advise />
 
       {/*  */}
-      <Header hiddenUser={true} activeHome={true} />
+      <Header activeHome={true} />
 
       {/*  */}
       <div className="container-jumbotron container m-auto flex flex-row">
         <div className="navside container flex flex-col gap-3 border-r-2 w-1/4 pt-7">
-          <div className="nav flex flex-row items-center justify-between pr-7">
-            <a href="">
+          <div className="container ">
+            <button
+              onClick={openNav}
+              className="container flex flex-row items-center justify-between pr-7"
+            >
               <p className="text-base">Women Fashion</p>
-            </a>
-            <FontAwesomeIcon icon={faAngleRight} className="text-xl" />
+
+              {isOpen === true ? (
+                <FontAwesomeIcon icon={faAngleDown} className="text-xl" />
+              ) : (
+                <FontAwesomeIcon icon={faAngleRight} className="text-xl" />
+              )}
+            </button>
+
+            {isOpen && (
+              <div className="flex flex-row items-center  justify-between pl-5">
+                <li>
+                  <p className="text-base">Shirt</p>
+                </li>
+              </div>
+            )}
           </div>
 
           <div className="nav flex flex-row items-center justify-between pr-7">
