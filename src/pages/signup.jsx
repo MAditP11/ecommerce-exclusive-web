@@ -12,7 +12,7 @@ export default function SignUp() {
       <Advise />
 
       {/*  */}
-      <Header hidden={"hidden"} />
+      <Header activeSignUp={true} hiddenIcon={true} />
 
       {/*  */}
       <div className="flex flex-row container gap-24 py-10 items-center">
@@ -57,7 +57,9 @@ export default function SignUp() {
             </button>
             <div className="container flex flex-row gap-3 justify-center">
               <p className="text-base font-normal">Already have account?</p>
-              <p className="text-base font-medium underline">Log In</p>
+              <a className="text-base font-medium underline" href="/login">
+                Log In
+              </a>
             </div>
           </div>
         </div>

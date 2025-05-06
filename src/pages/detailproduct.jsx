@@ -39,14 +39,14 @@ export default function DetailProduct() {
       if (Number(newValue) === 0 || Number(count) < 0) {
         setCount(1);
       } else {
-        setCount(newValue);
+        setCount(Number(newValue));
       }
     }
   };
 
   const blurValue = () => {
-    if (Number(count) === 0 || Number(count) < 0) {
-      // setCount(1);
+    if (count === 0 || isNaN(count)) {
+      setCount(1);
     }
   };
 
@@ -186,7 +186,7 @@ export default function DetailProduct() {
                     </button>
                     <div className=" py-2 w-16 border-[1px] flex items-center justify-center">
                       <input
-                        type="number"
+                        type="text"
                         value={count}
                         ref={inputRef}
                         onFocus={handleFocus}

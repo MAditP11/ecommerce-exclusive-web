@@ -21,7 +21,7 @@ export default function About() {
   return (
     <div className="">
       <Advise />
-      <Header />
+      <Header activeAbout={true} />
 
       {/*  */}
       <div className="flex flex-col gap-40 py-10">

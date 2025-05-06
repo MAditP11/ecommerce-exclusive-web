@@ -10,7 +10,7 @@ export default function Contact() {
   return (
     <div className="">
       <Advise />
-      <Header />
+      <Header activeContact={true} />
 
       {/*  */}
       <div className="container mx-auto flex flex-col gap-14 py-14">

@@ -2,7 +2,6 @@ import { faHeart, faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import { faSearch, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavHeader from "./navHeader";
-import { useState } from "react";
 export default function Header({
   hiddenIcon,
   hiddenUser,
@@ -11,7 +10,6 @@ export default function Header({
   activeAbout,
   activeSignUp,
 }) {
-  const [count, setCount] = useState(0);
   return (
     <div className="container-navbar container flex flex-row m-auto w-screen pt-7 pb-3 border-b-2 items-center">
       <div className="brand container">
@@ -42,12 +40,9 @@ export default function Header({
             hiddenIcon === true ? "hidden" : ""
           }`}
         >
-          <div className="bg-slate-400 py-1">
-            <a href="/whislist">
-              <FontAwesomeIcon icon={faHeart} className="text-xl" />
-            </a>
-            <p>{count}</p>
-          </div>
+          <a href="/whislist">
+            <FontAwesomeIcon icon={faHeart} className="text-xl" />
+          </a>
           <a href="/cart">
             <FontAwesomeIcon icon={faCartShopping} className="text-xl" />
           </a>
